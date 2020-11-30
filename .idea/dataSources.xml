@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="lyonpalme@localhost" uuid="5c4e0602-8899-4872-aa45-e8145ac3d068">
+      <driver-ref>mariadb</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.mariadb.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mariadb://localhost:3306/lyonpalme</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="lyonpalme@localhost [2]" uuid="5e3cea0a-1c64-4b1b-9f7d-81f1f82c934d">
+      <driver-ref>mariadb</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.mariadb.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mariadb://localhost:3306/lyonpalme</jdbc-url>
+    </data-source>
+  </component>
+</project>
