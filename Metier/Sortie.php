@@ -114,7 +114,7 @@ class Sortie
      */
     public function getMentionFacultative(): string
     {
-        return $this->mentionFacultative;
+        return $this->mentionFacultative ?? 'Aucune';
     }
 
     /**
@@ -209,7 +209,7 @@ class Sortie
     // endregion
 
     // region Constructeur
-    public function __construct(string $identifiant, DateTime $jour, string $lieuRDV, DateTime $heureRDV, string $plage, DateTime $heureMiseAlEau, string $niveauPublic, Adherent $entraineurEncadrant, string $mentionFacultative = 'Aucune')
+    public function __construct(string $identifiant, DateTime $jour, string $lieuRDV, DateTime $heureRDV, string $plage, DateTime $heureMiseAlEau, string $niveauPublic, Adherent $entraineurEncadrant, string $mentionFacultative = NULL)
     {
         $this->identifiant = $identifiant;
         $this->jour = $jour;

@@ -32,8 +32,7 @@ class DAOSortie
         $plage = $ligneDeResultat['plage_sortie'];
         $heureMiseAlEau = DateTime::createFromFormat('Y-m-d H:i:s',$strJour.' '.$ligneDeResultat['heuremisealeau_sortie']);
         $niveauPublic = $ligneDeResultat['niveaupublic_sortie'];
-        // Dans la BDD le champ 'mentionhiver_sortie' de la table 'sortie' peut contenir la valeur null
-        $mentionFacultative = ($ligneDeResultat['mentionhiver_sortie'] == null) ? 'Aucune' : $ligneDeResultat['mentionhiver_sortie'];
+        $mentionFacultative = $ligneDeResultat['mentionhiver_sortie'];
         $entraineurEncadrant = DAOAdherent::newAdherent($ligneDeResultat);
         return new Sortie($identifiant,$jour,$lieuRDV,$heureRDV,$plage,$heureMiseAlEau,$niveauPublic,$entraineurEncadrant,$mentionFacultative);
     }

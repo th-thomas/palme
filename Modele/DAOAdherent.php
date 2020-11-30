@@ -70,8 +70,7 @@ class DAOAdherent
         $dateFinCertifMed = new DateTime($ligneDeResultat['datefincertifmed_adh']);
         $estEntraineur = ($ligneDeResultat['identraineur'] == null) ? false : true;
         $estCoach = ($ligneDeResultat['idcoach'] == null) ? false : true;
-        // Dans la BDD le champ 'fonctionbureau_adh' de la table 'adherent' peut contenir la valeur null
-        $fonctionBureau = ($ligneDeResultat['fonctionbureau_adh'] == null) ? 'Aucune' : $ligneDeResultat['fonctionbureau_adh'];
+        $fonctionBureau = $ligneDeResultat['fonctionbureau_adh'];
         $estRespMateriel = $ligneDeResultat['estresponsablemateriel_adh'];
         $estRespPlanning = $ligneDeResultat['estresponsableplanning_adh'];
         $login = $ligneDeResultat['login_adh'];
@@ -106,7 +105,7 @@ class DAOAdherent
         $dateNaissance = $adherent->getDateNaissance()->format("Y-m-d");
         $dateInscription = $adherent->getDateInscription()->format("Y-m-d");
         $dateFinCertifMed = $adherent->getDateFinCertifMed()->format("Y-m-d");
-        $fonctionBureau = $adherent->getFonctionBureau();
+        $fonctionBureau = ($adherent->getFonctionBureau() == 'Aucune') ? NULL : $adherent->getFonctionBureau();
         $estRespMateriel = ($adherent->getEstRespMateriel()) ? 1 : 0;
         $estRespPlanning = ($adherent->getEstRespPlanning()) ? 1 : 0;
         $login = $adherent->getLogin();

@@ -41,7 +41,7 @@ class Adherent
     /**
      * @var string Eventuelle fonction occupée par l'adhérent au sein du bureau
      */
-    private string $fonctionBureau;
+    private ?string $fonctionBureau;
     /**
      * @var bool L'adhérent est entraîneur ou non
      */
@@ -130,7 +130,7 @@ class Adherent
      */
     public function getFonctionBureau(): string
     {
-        return $this->fonctionBureau;
+        return $this->fonctionBureau ?? 'Aucune';
     }
 
     /**
@@ -322,7 +322,7 @@ class Adherent
      * @param bool $estRespMateriel L'adhérent est responsable ou non du matériel
      * @param bool $estRespPlanning L'adhérent est responsable ou non du planning des séances
      */
-    public function __construct(string $identifiant, string $nom, string $prenom, DateTime $dateNaissance, DateTime $dateInscription, DateTime $dateFinCertifMed, string $login, string $mdp, bool $estActif = true, bool $estEntraineur = false, bool $estCoach = false, string $fonctionBureau = 'Aucune', bool $estRespMateriel = false, bool $estRespPlanning = false)
+    public function __construct(string $identifiant, string $nom, string $prenom, DateTime $dateNaissance, DateTime $dateInscription, DateTime $dateFinCertifMed, string $login, string $mdp, bool $estActif = true, bool $estEntraineur = false, bool $estCoach = false, string $fonctionBureau = NULL, bool $estRespMateriel = false, bool $estRespPlanning = false)
     {
         $this->identifiant = $identifiant;
         $this->estActif = $estActif;
