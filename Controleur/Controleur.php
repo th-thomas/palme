@@ -143,7 +143,7 @@ class Controleur
             $dateNaissance = new \DateTime($_POST['datenaissance']);
             $dateInscription = new \DateTime(date("Y-m-d"));
             $dateFinCertifMed = new \DateTime($_POST['datefincertifmed']);
-            $login = strtolower(substr($prenom,0,1).$prenom);
+            $login = strtolower(substr($prenom,0,1).$nom);
             $mdp = $login.'pwd';
             $adherent = new Adherent($identifiant,$nom,$prenom,$dateNaissance,$dateInscription,$dateFinCertifMed,$login,$mdp);
             DAOAdherent::inscrireAdherent($adherent);
